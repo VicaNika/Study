@@ -10,10 +10,12 @@ public class Task1 {
     public static int getResult (int arg){ // Метод для расчета результата перемножения
         int result = 1;
         for (int num = 1; num <=arg; num++){
-
+            if (num == arg){
+                System.out.print(num);
+            }else
                 System.out.print(num + " * ");
 
-            result = result *num;
+            result = result * num;
 
         }
         return result;
