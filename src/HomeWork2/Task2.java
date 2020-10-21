@@ -10,11 +10,12 @@ public class Task2 {
         System.out.println("Введите элементы массива:");
 
 
-        // Вывод массива с применением цикла for
         for (int i = 0; i < size; i++) {
             array[i] = in.nextInt(); // Заполнение массива элементами, введенными с клавиатуры
         }
         System.out.print ("Вывод:");
+
+        // Вывод массива с применением цикла for
         for (int i = 0; i < size; i++) {
             System.out.print (" " + array[i]); // Вывод полученного массива в консоль
         }
