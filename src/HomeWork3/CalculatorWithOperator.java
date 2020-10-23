@@ -1,31 +1,27 @@
 package HomeWork3;
 
-public class CalculatorWithOperator {
+public class CalculatorWithOperator implements ICalculator{
 
     // Метод деления
      public double division (double a, double b){
-         double result= a/b;
 
-         return result;
+         return a/b;
      }
      // Метод умножения
      public double multiplication (double a, double b){
-         double result = a*b;
 
-         return result;
+         return a*b;
      }
      // Метод вычитания
      public double subtraction (double a, double b){
-         double result = a-b;
 
-         return result;
+         return a-b;
 
      }
      // Метод сложения
     public double addition (double a, double b){
-         double result = a+b;
 
-         return result;
+        return a+b;
     }
 
     // Метод возведения в целую степень степень дробного положительного числа
@@ -51,9 +47,8 @@ public class CalculatorWithOperator {
     }
     // Метод вычисления квадратного корня
     public double squareRoot (double value){
-         double result = Math.sqrt(value);
 
-         return result;
+        return Math.sqrt(value);
     }
 
 
