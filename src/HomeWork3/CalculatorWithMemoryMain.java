@@ -14,6 +14,7 @@ public class CalculatorWithMemoryMain {
         System.out.println(calculator.getResult());
         calculator.record(calculator.addition(calculator.getResult(), 4.1));
         System.out.println(calculator.getResult());
+        System.out.println(calculator.getCountOperation());
 
     }
 }
