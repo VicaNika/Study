@@ -31,7 +31,17 @@ public class DataContainerMain {
         container5.print(container5.getData());
         System.out.println("Возвращаемое значение: " + container4.get(5));
         System.out.println("Возвращаемое значение: " + container5.get(6));
+
         container4.delete(0);
+        container4.print(container4.getData());
+        container4.delete(0);
+        container4.print(container4.getData());
+        System.out.println(container4.delete(5));
+        container4.print(container4.getData());
+        System.out.println(container4.deleteItem(5));
+        container4.print(container4.getData());
+
+
     }
 }
 

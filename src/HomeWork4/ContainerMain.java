@@ -26,6 +26,9 @@ public class ContainerMain {
         System.out.println( "Возвращаемый индекс: " + container5.add(85));
         System.out.println( "Возвращаемый индекс: " + container5.add(985));
         container5.print(container5.getData());
+        container5.delete(3);
+        container5.print(container5.getData());
+
     }
 
 }
