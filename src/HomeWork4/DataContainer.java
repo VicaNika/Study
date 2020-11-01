@@ -2,8 +2,10 @@ package HomeWork4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 
-public class  DataContainer<T> {
+public class  DataContainer<T>  {
+
     public T[] getData() {
 
         return data;
@@ -92,6 +94,39 @@ public class  DataContainer<T> {
 
         return false;
     }
+    void sort (ComparatorT<T> comparator) {
+        T temp;
+        boolean isSorted = false; // переменная для опеределения отсортирован ли массив
 
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i< data.length-1; i++) {
+                if (comparator.compare(data[i], data[i+1]) >= 0) {
+                    isSorted = false;
+
+
+                    temp = data[i];
+                    data[i] = data[i+1];
+                    data[i+1] = temp;
+                }
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] != null) {
+                str.append(data[i]);
+                str.append(", ");
+            }
+        }
+        str.setLength(str.length()-2);
+
+        return "Содержимое контейнера: " + "["
+                 + str.toString()  + "]";
+    }
 
 }

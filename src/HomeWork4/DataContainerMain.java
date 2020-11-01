@@ -1,8 +1,10 @@
 package HomeWork4;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DataContainerMain {
+
     public static void main(String[] args) {
 
 
@@ -11,6 +13,8 @@ public class DataContainerMain {
     DataContainer<Integer> container3 = new DataContainer<Integer>(new Integer[] {1, null, 3, null, null, null});
     DataContainer<Integer> container4 = new DataContainer<Integer>(new Integer[] {1, 2, 3, 3, 4, 5});
     DataContainer<Integer> container5 = new DataContainer<Integer>(new Integer[5]);
+    DataContainer<String> container6 = new DataContainer<String>(new String[5]);
+    ComparatorT <Integer> comparator = new ComparatorT<>();
 
 
         System.out.println( "Возвращаемый индекс: " + container1.add(777));
@@ -40,6 +44,10 @@ public class DataContainerMain {
         container4.print(container4.getData());
         System.out.println(container4.deleteItem(5));
         container4.print(container4.getData());
+        container5.sort(comparator);
+        container4.print(container5.getData());
+        System.out.println(container3.toString());
+        System.out.println(container1.toString());
 
 
     }
