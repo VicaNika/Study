@@ -128,5 +128,12 @@ public class  DataContainer<T>  {
         return "Содержимое контейнера: " + "["
                  + str.toString()  + "]";
     }
+    static void sort (DataContainer<? extends Comparable> container) {
+        
+
+    }
+    static void sort (DataContainer<? extends Comparable> container, ComparatorT<? extends Comparator> comparator) {
+
+    }
 
 }
