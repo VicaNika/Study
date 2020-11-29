@@ -1,15 +1,9 @@
 package HomeWork5;
 
-import com.sun.source.tree.Tree;
-
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class WarAndPeace {
     public static void main(String[] args) throws IOException {
@@ -21,23 +15,34 @@ public class WarAndPeace {
             set.add(file.next().trim().toLowerCase()
                     .replaceAll("\\p{Punct}", ""));
         }
+        // Вывод сета с уникальными словами
+        System.out.println(set);
+        System.out.println("Размер сета: " + set.size());
 
-        //System.out.println(set);
-        //System.out.println(set.siz
-        // .e());
 
         String text = Files.readString(Paths.get("HomeWork" + File.separator + "res" + File.separator +"book.txt"));
 
-//        EasySearch easySearch = new EasySearch();
-//        System.out.println(easySearch.search(text, "война"));
-//        System.out.println(easySearch.search(text, "и"));
-//        System.out.println(easySearch.search(text, "мир"));
-        RexExSearch reg = new RexExSearch();
-        System.out.println(reg.search(text, "война"));
-        System.out.println(reg.search(text, "и"));
-        System.out.println(reg.search(text, "мир"));
+        // Вывод с помощью EasySearch
+        EasySearch easySearch = new EasySearch();
+        System.out.println("____________________Используя EasySearch________________");
+        System.out.println("Слово война: " + easySearch.search(text, "война"));
+        System.out.println("Слово и: " + easySearch.search(text, "и"));
+        System.out.println("Слово мир: " + easySearch.search(text, "мир"));
+        // Вывод с помощью RegExSearch
+        RegExSearch reg = new RegExSearch();
+        System.out.println("____________________Используя RegExSearch________________");
+        System.out.println("Слово война: " + reg.search(text, "война"));
+        System.out.println("Слово и: " +reg.search(text, "и"));
+        System.out.println("Слово мир: " +  reg.search(text, "мир"));
 
-        String[] array = text.toLowerCase().split("[^A-Za-zА-Яа-я]+");
+        String[] array = text.toLowerCase().split("[^A-Za-zА-Яа-я]+"); // Текст разбивается на слова и они помещаются в массив
+        String newTxt = String.join(",", array);
+        // Печать слов в тексте, переделанном из массива (для сравнения)
+        System.out.println("____________________Используя переделанный массив________________");
+        System.out.println("Слово война: " + reg.search(newTxt, "война"));
+        System.out.println("Слово и: " +reg.search(newTxt, "и"));
+        System.out.println("Слово мир: " +  reg.search(newTxt, "мир"));
+
         HashMap<String, Integer> map = new HashMap<String, Integer>();
 
         for (String s : array) {
@@ -48,26 +53,13 @@ public class WarAndPeace {
             }
         }
 
-/*
-        String maxKey = null;
-        int maxValue = 0;
-
-        for (String s : map.keySet()) {
-            if (map.get(s) > maxValue) {
-                maxKey = s;
-                maxValue = map.get(s);
-            }
-        }
-
-        //System.out.println(map);
-
-        //System.out.println("Самое повторяющееся слово: " + "{" + maxKey + "} "  + "количество повторений " + "- " + maxValue);
-*/
 // Печать первых 10 самых повторяющихся слов в тексте
        map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(10)
                 .forEach(System.out::println);
+
+
 
 
     }

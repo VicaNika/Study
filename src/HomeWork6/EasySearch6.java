@@ -1,16 +1,16 @@
-package HomeWork5;
+package HomeWork6;
 
-public class EasySearch implements ISearchEngine {
+public class EasySearch6 implements ISearchEngine {
     @Override
     public long search(String text, String word) {
         String textLC = text.toLowerCase();
-        String word1 = " " + word;
+
 
         long count = 0;
         int index = 0;
 
-       while (index != -1) {
-            index = textLC.indexOf(word1, index);
+        while (index != -1) {
+            index = textLC.indexOf(word,index);
             if (index != -1) {
                 count++;
                 index++;
@@ -18,6 +18,7 @@ public class EasySearch implements ISearchEngine {
 
         }
         return count;
+
     }
-    
+
 }

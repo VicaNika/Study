@@ -1,9 +1,9 @@
-package HomeWork5;
+package HomeWork6;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RexExSearch implements ISearchEngine {
+public class RegExSearch6 implements ISearchEngine {
     @Override
     public long search(String text, String word) {
         Pattern pattern = Pattern.compile("[.|\\p{Space}|\\p{Punct}]" + word + "[\\p{Punct}|\\p{Space}]", Pattern.CASE_INSENSITIVE);
